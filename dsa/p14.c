@@ -48,8 +48,8 @@ void preorder(struct tree *root)
 {
   if(root!=NULL)
   {
-    inorder(root->r);
     printf("%d ",root->data);
+    inorder(root->r);
     inorder(root->l);
   }
 }
@@ -58,8 +58,8 @@ void postorder(struct tree *root)
   if(root!=NULL)
   {
     inorder(root->l);
-    printf("%d ",root->data);
     inorder(root->r);
+    printf("%d ",root->data);
   }
 }
 void main()
@@ -81,9 +81,13 @@ void main()
          break;
     case 2:inorder(root);
          break;
+    case 3:preorder(root);
+         break;
+    case 4:postorder(root);
+         break;
     case 5:break;
     default:printf("enter valid choice:");
           break;
   }
-  }while(c!=3);
+  }while(c!=5);
 }
